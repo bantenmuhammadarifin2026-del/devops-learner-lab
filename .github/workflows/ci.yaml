@@ -1,0 +1,19 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    name: Build and Validate
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Validate Code & Syntax
+        run: |
+          echo "Validating application code..."
+          # Masukkan perintah pengujian jika ada (misal: npm test, python -m unittest, dll)
